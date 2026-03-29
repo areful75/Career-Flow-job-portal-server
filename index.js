@@ -44,6 +44,11 @@ async function run() {
         const result=await jobCollection.findOne(query);
         res.send(result);
     })
+    app.post('/jobs',async (req,res)=>{
+        const job=req.body;
+        const result=await jobCollection.insertOne(job);
+        res.send(result);
+    })
 
     //job application related api
 
